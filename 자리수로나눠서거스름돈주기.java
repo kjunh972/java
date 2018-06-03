@@ -7,8 +7,10 @@ public class 자리수로나눠서거스름돈주기 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("돈을 지불해 주세요. 가격은 0원입니다 : ");
+		System.out.print("돈을 지불해 주세요. (모든 물건은 0원입니다.) : ");
 		int num = sc.nextInt();
+		
+		System.out.println("거스름돈 드리겠습니다...");
 		
 		System.out.println(" 오만원짜리 : "+num / 50000);
 		num = num % 50000;
