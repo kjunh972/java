@@ -1,4 +1,4 @@
-// Ver 1.0
+// Ver 1.1
 
 package kjunh972.java;
 
@@ -15,7 +15,7 @@ public class 숫자야구 {
 		int ball = 0;
 		int out = 0;
 		
-		for (int round=1; round<=3; round++)
+		for (int round=1; round<=9; round++)
 		{
 			int ram = rm.nextInt(899)+100; //100~999까지 랜덤
 			System.out.println("(관리자 버프)숫자야구 수 : "+ram);
@@ -38,6 +38,8 @@ public class 숫자야구 {
 				ram10 = ram10/10; //랜덤함수 자리수로 분리
 			}
 			
+			System.out.println("==============="+round+"라운드입니다.===============");
+			
 			System.out.print("숫자를 입력해주세요 (최대 세자리 수로 입력해주세요.) : ");
 			int numUser = sc.nextInt();
 			
@@ -48,7 +50,7 @@ public class 숫자야구 {
 			num10 = num10/10; //입력함수 자리수로 분리
 			
 			//else if 안쓴 이유는 else if 쓰면 if문 돌릴때 참이하나 나오면 바로 탈출해서 전부다 검사하기 위해
-			//스트라이크와 볼 구하는 부분
+			//스트라이크 구하는 부분
 			if (ram100==num100)
 			{
 				stike++;
@@ -59,6 +61,8 @@ public class 숫자야구 {
 			if (ram1==num1 ) {
 				stike++;
 			}
+			
+			//볼 구하는 부분
 			if (ram10 == num100) {
 				ball++;
 			}
@@ -84,9 +88,15 @@ public class 숫자야구 {
 				out = 3*round-(stike+ball);
 			}
 			
-			
-			
 			System.out.println(stike+"스트라이크 이고, "+ball+"볼이고, "+out+"아웃입니다");
+			
+			//2out이면 탈출
+			if (out == 2)
+			{
+				System.out.println("2아웃이라 숫자야구를 종료합니다.");
+				break;
+			}
+			
 		}
 
 	}
