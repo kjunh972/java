@@ -14,7 +14,7 @@ public class 콜라츠추측 {
 		while (true)
 		{
 			i++;
-			if (i==500)
+			if (i==500) //500번 반복해도 1이 안되면 -1로 
 			{
 				num = -1;
 				break;
